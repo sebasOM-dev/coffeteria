@@ -1,0 +1,25 @@
+<div role="region" aria-label="Formulario de inicio de sesión/registro" class="flex flex-col items-center justify-center min-h-screen">
+
+    @if (isLoginPage()) {
+        <h2 class="text-2xl font-bold mb-6">Registro</h2>
+    } @else {
+        <h2 class="text-2xl font-bold mb-6">Iniciar sesión</h2>
+    }
+
+    <form novalidate class="flex flex-col gap-4 border-solid border-2 border-gray-300 p-6 rounded-lg shadow-xl p-20">
+        <login-registrer-input [inputLabel]="'Email'"></login-registrer-input>
+        <login-registrer-input [inputLabel]="'Password'"></login-registrer-input>
+        <login-registrer-input [inputLabel]="'Repeat Password'"></login-registrer-input>
+        @if (!isLoginPage()) {
+            <div class="flex flex-col gap-2 mt-4">
+                <h6 (click)="toggleLoginPage()" style="cursor: pointer; color: blue;">¿No tienes cuenta? Regístrate aquí</h6>
+                <button type="button" class="outline-1 outline-offset-0 outline-indigo-500 p-3 rounded-xl btn-loginRegister">Iniciar sesión</button>
+            </div>
+        }@else{
+            <div class="flex flex-col gap-2 mt-4">
+                <h6 (click)="toggleLoginPage()" style="cursor: pointer; color: blue;">¿tienes cuenta? Inicia sesión aquí</h6>
+                <button type="button" class="outline-1 outline-offset-0 outline-indigo-500 p-3 rounded-xl btn-loginRegister" style="cursor: pointer;">Crear cuenta</button>
+            </div>
+        }
+    </form>
+</div>

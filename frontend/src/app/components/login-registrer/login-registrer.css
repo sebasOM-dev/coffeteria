@@ -1,0 +1,16 @@
+@keyframes btn-loginRegister-hover {
+    0% {
+        background-color: white;
+        color: black;
+    }
+    100% {
+        background-color: rgb(144, 4, 245);
+        color: white;
+    }
+}
+
+
+
+.btn-loginRegister:hover{
+    animation: btn-loginRegister-hover .4s forwards;
+}
