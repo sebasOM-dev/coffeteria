@@ -1,0 +1,28 @@
+services:
+  bDevService:
+    image: phpmyadmin:5.2.3-apache
+    ports:
+      - "8081:80"
+    networks:
+      - networkDev
+    environment:
+      - PMA_HOST=dbService
+      - PMA_PORT=3306
+    depends_on:
+      - dbService
+
+  dbService:
+    image: mysql:8
+    ports:
+      - "3307:3306"   # PUERTO CORRECTO
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_USER=springuser
+      - MYSQL_PASSWORD=springpass
+      - MYSQL_DATABASE=coffeteria
+    networks:
+      - networkDev
+
+networks:
+  networkDev:
+    driver: bridge
