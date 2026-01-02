@@ -19,6 +19,11 @@ public class UserImpl implements UserService {
     }
 
     @Override
+    public User getUserByEmail(String email) {
+        return ur.getUserByEmail(email);
+    }
+
+    @Override
     public void addUser(User user) {
         ur.save(user);
     }

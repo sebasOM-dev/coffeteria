@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table (name = "users")
 public class User {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column
     private String name;
@@ -14,10 +15,11 @@ public class User {
     @Column
     private String password;
     @ManyToOne
-    @Column
     private UserType userTypeId;
     @Column
     private int active;
+
+    public User(){}
 
     public User(Long id, String name, String email, String password, UserType userTypeId, int active) {
         this.id = id;
@@ -27,6 +29,8 @@ public class User {
         this.userTypeId = userTypeId;
         this.active = active;
     }
+
+
 
     public Long getId() {
         return id;

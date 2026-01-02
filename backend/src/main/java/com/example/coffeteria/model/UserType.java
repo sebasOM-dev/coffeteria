@@ -1,12 +1,12 @@
 package com.example.coffeteria.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class UserType {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
     private String name;
@@ -17,6 +17,9 @@ public class UserType {
         this.id = id;
         this.name = name;
         this.active = active;
+    }
+
+    public UserType() {
     }
 
     public Long getId() {
