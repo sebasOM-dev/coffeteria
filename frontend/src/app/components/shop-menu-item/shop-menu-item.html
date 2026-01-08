@@ -1,0 +1,33 @@
+<div class="menu-item">
+  <!-- Imagen -->
+  <img
+    class="menu-item-image"
+    [src]="imageUrl"
+    [alt]="name"
+  />
+
+  <!-- Nombre + acciones -->
+  <div class="menu-item-footer">
+    <span class="menu-item-name">
+      {{ name }}
+    </span>
+
+    <div class="menu-item-actions">
+      <button
+        class="btn favorite"
+        (click)="onFavorite()"
+        title="Favorito"
+      >
+        ❤️
+      </button>
+
+      <button
+        class="btn buy"
+        (click)="onBuy()"
+        title="Comprar"
+      >
+        🛒
+      </button>
+    </div>
+  </div>
+</div>

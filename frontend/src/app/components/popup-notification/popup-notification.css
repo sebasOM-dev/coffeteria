@@ -22,7 +22,6 @@
 
 /* Popup base */
 .popup {
-  background-color: var(--popup-bg-color);
   width: 90%;
   max-width: 400px;
   border-radius: 8px;
@@ -53,14 +52,12 @@
 .popup-title {
   margin: 0 0 10px;
   font-size: 20px;
-  color: var(--popup-title-color);
 }
 
 .popup-message {
   margin: 0;
   font-size: 15px;
   line-height: 1.4;
-  color: var(--popup-message-color);
 }
 
 /* Animación */

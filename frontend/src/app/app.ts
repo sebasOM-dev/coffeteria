@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LoginRegistrer } from './components/login-registrer/login-registrer';
 import { PopupNotificationService } from './services/popup-notification-service';
 import { PopupNotification } from './components/popup-notification/popup-notification';
+import { MenuBarPrincipal } from './components/menu-bar-principal/menu-bar-principal';
+import { ShopMenu } from "./components/shop-menu/shop-menu";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginRegistrer, PopupNotification],
+  imports: [PopupNotification, MenuBarPrincipal, ShopMenu, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

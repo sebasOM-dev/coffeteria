@@ -1,18 +1,28 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-  <body> -->
-    
-    @if (popupNotificationService._isVisible()) {
-      <app-popup-notification 
-        [title]="this.popupNotificationService.popupMessage.title" 
-        [message]="this.popupNotificationService.popupMessage.message">
-      </app-popup-notification>
-    }
-    <app-login-registrer/>
-  <!-- </body>
-</html> -->
+
+
+<app-menu-bar-principal></app-menu-bar-principal>
+<router-outlet></router-outlet>
+
+
+<!-- TODO EMPEZAMOS CON EL HOME CON TODAS LAS BEBIDAS -->
+<div>
+  <!-- TODO ARREGLAR QUE EL NAV NO TAPE EL CONTENIDO -->
+  <app-shop-menu></app-shop-menu>  
+</div>
+
+ 
+
+
+<!-- POPUP NOTIFICATION -->
+@if (popupNotificationService._isVisible()) {
+  <div style="position: fixed; top: 80dvh; left: 20px;">
+    <app-popup-notification 
+      [title]="popupNotificationService.popupMessage.title"
+      [message]="popupNotificationService.popupMessage.message"
+      [messageColor]="popupNotificationService.popupMessage.messageColor"
+      [backgroundColor]="popupNotificationService.popupMessage.backgroundColor">
+    </app-popup-notification>
+  </div>
+}
+
+

@@ -1,0 +1,25 @@
+<nav class="w-full bg-indigo-500 text-white shadow-md" style="position: fixed;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo / Nombre -->
+      <div class="text-xl font-semibold tracking-wide cursor-pointer">
+        Coffeteria
+      </div>
+
+      <!-- Links -->
+      <div class="flex gap-6 items-center">
+         @for (option of MENU_OPTIONS; track option.value) {
+          <app-menu-bar-principal-option 
+            [labelOption]="option.value"
+            [routerLinkPath]="option.route">
+          </app-menu-bar-principal-option>
+        } @empty {
+          <span class="text-white text-sm opacity-70">
+            No hay opciones de menú
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

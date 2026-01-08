@@ -16,27 +16,34 @@ export class PopupNotificationService {
   successMessage: string = "La operación se ha completado con éxito.";
   warningTittle: string = "Advertencia";
   warningMessage: string = "Por favor, revise la información proporcionada.";
+
+  errorBackgroundColor: string = "#f54747";
+  successBackgroundColor: string = "#47f54e";
+  warningBackgroundColor: string = "#f5e147";
+
+
   
 
   constructor() {
     this.popupMessage = {
       title: '',
-      message: ''
+      message: '',
+      messageColor: 'black',
+      backgroundColor: 'white'
     };
   }
-
-  // setIsVisible(visible: boolean): void {
-  //   this._isVisible = visible;
-  // }
   
   setErrorMessage(){
     this.popupMessage.title = this.errorTittle;
     this.popupMessage.message = this.errorMessage;
+    this.popupMessage.backgroundColor = this.errorBackgroundColor;
+    this.popupMessage.messageColor = 'white';
   }
 
   setSuccessMessage(){
     this.popupMessage.title = this.successTittle;
     this.popupMessage.message = this.successMessage;
+    this.popupMessage.backgroundColor = this.successBackgroundColor;
   }
 
   setWarningMessage(){

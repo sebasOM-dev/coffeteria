@@ -13,4 +13,6 @@ export class PopupNotification {
   isVisible: boolean = false;
   title = input('');
   message = input('');
+  messageColor = input('black');
+  backgroundColor = input('white');
 }
